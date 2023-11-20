@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface IElearningRepo extends JpaRepository<CoursesDto, Double> {
-    List<CoursesDto> findByType(@Param("t")Categories type);
+    //List<CoursesDto> findByType(@Param("t")Categories type);
 
 }
