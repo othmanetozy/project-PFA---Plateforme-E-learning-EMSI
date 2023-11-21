@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data @NoArgsConstructor @AllArgsConstructor @Entity @Builder
 public class Courses {
     @Id
-    private Double id;
+    private double Id;
     private int Duration;
     @Enumerated(EnumType.STRING)
     private String Category;

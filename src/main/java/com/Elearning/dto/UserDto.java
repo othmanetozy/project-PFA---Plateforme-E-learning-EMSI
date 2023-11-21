@@ -1,4 +1,4 @@
 package com.Elearning.dto;
 
-public class UtilisateurDto {
+public class UserDto {
 }
