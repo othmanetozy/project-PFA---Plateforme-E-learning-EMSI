@@ -1,49 +1,23 @@
 <body>
 <div class="registration-container">
-  <h2>Insciption</h2>
+  <h2>Inscription</h2>
   <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
     <div class="form-group">
-      <label for="username">Nom:</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        ngModel
-        required
+      <label for="username"></label>
+      <input type="text" id="username" name="username" ngModel required placeholder="Nom"/>
+    </div>
+    <div class="form-group">
+      <label for="email"></label>
+      <input type="email" id="email" name="email" ngModel required email placeholder=" email "/>
+    </div>
+    <div class="form-group">
+      <label for="password"></label>
+      <input type="password" id="password" name="password" ngModel required minlength="6" placeholder="Enter a password with at least 6 characters"
       />
     </div>
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        ngModel
-        required
-        email
-      />
-    </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        ngModel
-        required
-        minlength="6"
-      />
-    </div>
-    <div class="form-group">
-      <label for="confirmPassword">Confirm Password:</label>
-      <input
-        type="password"
-        id="confirmPassword"
-        name="confirmPassword"
-        ngModel
-        required
-        minlength="6"
-      />
+      <label for="confirmPassword"></label>
+      <input type="password" id="confirmPassword" name="confirmPassword" ngModel required minlength="6" placeholder="Confirm your password"/>
     </div>
     <button type="submit" [disabled]="!registrationForm.valid">Register</button>
   </form>

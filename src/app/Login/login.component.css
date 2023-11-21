@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -29,10 +34,12 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .form-group {
   margin-bottom: 15px;
+
 }
 
 label {
@@ -41,9 +48,21 @@ label {
 }
 
 input {
+  padding: 11px;
   width: 100%;
-  padding: 8px;
+  margin: 2rem 0;
   box-sizing: border-box;
+  background-color: #9191911f;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 12px;
+  backdrop-filter: blur(15px);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 button {
@@ -55,10 +74,13 @@ button {
   cursor: pointer;
 }
 
-button:disabled {
+/*button:disabled {
   background-color: #dddddd;
   cursor: not-allowed;
-}
+}*/
+
 h2{
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-family: Roboto, sans-serif;
+  color: var(--color);
 }
