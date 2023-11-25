@@ -1,6 +1,67 @@
 <!-- home.component.html -->
 
-<div>
-  <h2>Welcome to E-Learning!</h2>
-  <!-- Add any additional content as needed -->
+<div class="bg-image m-0">
+  <section id="home" class="sc-eTNep iCNgno container flexSpaceCenter">
+          <div>
+            <h1 class="extraBold font40">
+              <span class="welcome-text">
+                 Bienvenue sur
+              </span  >
+                E-Learning
+            </h1>
+            <div class="sc-brSaZW lcejaQ MontserratM header">
+              Le Monde de partage - Que Vous Aimes
+            </div>
+          </div>
+  </section>
+
+
+  <section id="service" class="sc-irLwvL oinKV mt-5 ">
+    <h4 class=" text-center p-3 MontserratM">Ecoles</h4>
+
+
+    <div class="lightBg">
+      <div class="container">
+        <div class="slick-slider slick-initialized">
+          <div class="slick-track">
+            <div class="slick-slide slick-active slick-current">
+              <div class="sc-jsEegt cSnoGV flexCenter">
+                <div>
+                  <img src="data:image/png;base64,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">
+                </div>
+              </div>
+            </div>
+            <div class="slick-slide slick-active">
+              <div class="sc-jsEegt cSnoGV flexCenter">
+                <div>
+                  <img src="https://upload.wikimedia.org/wikipedia/fr/0/05/EMI.PNG">
+                </div>
+              </div>
+            </div>
+            <div class="slick-slide slick-active">
+              <div class="sc-jsEegt cSnoGV flexCenter">
+                <div>
+                  <img src="https://media.licdn.com/dms/image/C4D0BAQFOUQJn4GoJnA/company-logo_200_200/0/1631305030978?e=2147483647&v=beta&t=Y-yFM5CWI1O3M7pboUHIXW3lYVhGyWE4w5OjUyLksNk">
+                </div>
+              </div>
+            </div>
+            <div class="slick-slide slick-active">
+              <div class="sc-jsEegt cSnoGV flexCenter">
+                <div>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Ensias2.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="slick-slide slick-active">
+              <div class="sc-jsEegt cSnoGV flexCenter">
+                <div>
+                  <img src="https://seeklogo.com/images/E/ecole-hassania-des-travaux-publics-maroc-logo-B0A188A6BE-seeklogo.com.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

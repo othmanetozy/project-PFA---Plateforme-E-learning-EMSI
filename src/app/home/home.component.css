@@ -1,0 +1,104 @@
+  /* home.component.css */
+
+  .extraBold {
+    text-align: left;
+    color: rgb(33, 37, 41);
+    margin-bottom: 20px;
+    font-weight: 800!important;
+
+  }
+
+  span.welcome-text {
+    font-size: 150px;
+    font-weight: bold;
+    color:#2b5f96;
+
+  }
+  h1{
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    padding-right: 30px;
+    text-align: center;
+    font-size: 100px;
+    color: #2b5f96;
+  }
+
+  div {
+    display: block;
+  }
+  .container {
+    width: 100%;
+  }
+  #home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Cela assure que la section prend toute la hauteur de la vue */
+  }
+  .header{
+    color: #41bac9;
+    font-size: 60px;
+    margin-left: 180px;
+  }
+
+
+  #service h4 {
+    text-align: center;
+    padding: 3px;
+    background-color:#2b5f96 ;
+    color: white;
+    font-weight: bold;
+    font-family: MontserratM, monospace;
+
+  }
+  .p-3 {
+    padding: 1rem!important;
+  }
+  h4{
+    font-size: 1.5rem;
+  }
+
+  /* bar.component.css */
+
+  .lightBg {
+    background-color: #f5f5f5;
+    padding: 1px 10px;
+    box-sizing:border-box;
+    border: 0;
+    vertical-align: initial;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-evenly ;
+  }
+
+  .slick-slider {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    float: left;
+    min-height: 2px;
+    margin-right: 10px;
+    height: 60%;
+  }
+
+  .slick-slide img {
+    width: 300px;
+    height: 200px;
+    margin: 1px auto;
+    display: block;
+    opacity: revert;
+  }
+
+
+  .slick-track {
+    display: flex;
+    flex-direction: row; /* Ajouter cette ligne pour afficher les images horizontalement */
+  }
+  .slick-slide:last-child {
+    margin-right: 0; /* Pour éviter une marge à droite sur le dernier élément */
+  }
