@@ -18,6 +18,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import { LoginComponent } from './Login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-
+    HttpClientModule
 
   ],
   providers: [],

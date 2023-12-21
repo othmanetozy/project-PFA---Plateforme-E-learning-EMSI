@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ServiceService } from '../Service/service.service'; // Fix the import
 
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.css']
 })
-export class ConnexionComponent implements OnInit {
+export class ConnexionComponent {
+  loginForm: FormGroup;
 
-  loginForm: FormGroup = new FormGroup({}); // Initialize the form here
-
-  constructor(private fb: FormBuilder, private router: Router) { }
-
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private service: ServiceService) { // Fix the service name
     this.loginForm = this.fb.group({
       name: ['', Validators.required],
       password: ['', Validators.required],
@@ -22,9 +19,15 @@ export class ConnexionComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      this.router.navigate(['/']);
-
+      const credentials = this.loginForm.value;
+      this.service.login(credentials).subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
     }
   }
-
 }

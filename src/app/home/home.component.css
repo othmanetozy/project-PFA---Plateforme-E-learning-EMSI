@@ -89,7 +89,7 @@
   .slick-slide img {
     width: 300px;
     height: 200px;
-    margin: 1px auto;
+    margin: auto;
     display: block;
     opacity: revert;
   }
@@ -102,3 +102,24 @@
   .slick-slide:last-child {
     margin-right: 0; /* Pour éviter une marge à droite sur le dernier élément */
   }
+
+
+  /* body-box.component.css */
+
+  .uc_default_bullets img {
+    max-width: 100%;
+
+  }
+  .entry-content img {
+    vertical-align: bottom;
+  }
+
+  .uc_centered_bullets_pic {
+    float: right;
+  }
+  .uc_centered_bullets_holder {
+    display: flex;
+    justify-content: flex-end; /* Alignez l'élément à droite */
+  }
+
+  /* Ajoutez d'autres styles au besoin */
