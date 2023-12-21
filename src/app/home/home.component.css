@@ -123,3 +123,35 @@
   }
 
   /* Ajoutez d'autres styles au besoin */
+
+
+
+
+.Container{
+  padding-top: 280px;
+}
+  .div.col-md-12.text-center.my-5 h1 {
+    font-size: 3rem;
+    margin: 0px 0px 8px;
+    font-family: MontserratK;
+  }
+
+  h4.MontserratK {
+    font-family: MontserratK;
+    font-size: 3rem;
+    line-height: 48px;
+    margin-top: 0;
+    color: #212529;
+    font-weight: bold;
+    text-align: center;
+  }
+
+.Montserrat_greyColor{
+  font-family: Poppins, sans-serif;;
+  color: #707070;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0px 0px 16px;
+  line-height: 24px;
+}
