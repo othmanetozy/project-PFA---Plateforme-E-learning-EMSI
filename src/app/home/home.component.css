@@ -155,3 +155,39 @@
   margin: 0px 0px 16px;
   line-height: 24px;
 }
+
+  .custom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .custom-container.text-center {
+    text-align: center;
+  }
+
+
+
+
+.custom-card {
+  margin: auto;
+  width: 22rem;
+  height: 20rem;
+  border-radius:10px ;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+  font-family: MontserratB;
+  font-weight: bold;
+  font-size: 29px;
+  text-align: center;
+}
+.mb-5{
+  font-size: 1rem;
+  color: #707070;
+  margin-bottom: 3rem!important;
+}
