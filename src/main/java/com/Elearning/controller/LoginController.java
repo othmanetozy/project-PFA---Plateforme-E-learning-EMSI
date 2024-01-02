@@ -1,5 +1,6 @@
 package com.Elearning.controller;
 
+import com.Elearning.config.ResourcesPath;
 import com.Elearning.dto.LoginDto;
 import com.Elearning.service.imp.LoginServiceImp;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @PostMapping("/login")
+    @PostMapping(ResourcesPath.LOGIN)
     public ResponseEntity<String> loginAuthentication(@RequestBody LoginDto loginDto) {
         boolean isAuthenticated = loginService.authenticate(loginDto.getUsername(), loginDto.getPassword());
         if (isAuthenticated) {
