@@ -1,20 +1,34 @@
 package com.Elearning.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+import com.Elearning.enums.Filiere;
 
-@Data @NoArgsConstructor @AllArgsConstructor @Entity @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity(name = "Courses")
+@Builder
 public class Courses {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column(name = "ID")
     private double Id;
+
+    @Column(name = "DURATION")
     private int Duration;
+
+
     @Enumerated(EnumType.STRING)
+    @Column(name = "FILIERE")
     private String Category;
+
+    @Column(name = "NIVEAU")
     private String Niveau;
+
+    @Column(name = "FILIERE")
+    @Enumerated(EnumType.STRING)
+    private String Filiere;
 }

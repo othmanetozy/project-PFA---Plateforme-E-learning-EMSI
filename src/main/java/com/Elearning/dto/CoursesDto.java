@@ -2,16 +2,18 @@ package com.Elearning.dto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data @NoArgsConstructor @AllArgsConstructor @Entity @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
+
 public class CoursesDto {
-    @Id
-    private double Id;
-    private int Duration;
-    private String Category;
-    private String Niveau;
+
+    private long id;
+    private int duration;
+    private String category;
+    private String niveau;
 }
