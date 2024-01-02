@@ -1,6 +1,9 @@
 package com.Elearning.dto;
 
 
+import com.Elearning.enums.Niveau;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +19,7 @@ public class FichesDto {
 
     private String name;
 
-    private String niveau;
+    @Enumerated(EnumType.STRING)
+    private Niveau niveau;
 
 }

@@ -30,5 +30,5 @@ public class Courses {
 
     @Column(name = "FILIERE")
     @Enumerated(EnumType.STRING)
-    private String Filiere;
+    private Filiere Filiere;
 }

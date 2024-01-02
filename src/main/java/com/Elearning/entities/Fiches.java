@@ -22,5 +22,6 @@ public class Fiches {
     private String name;
 
     @Column(name = "NIVEAU")
+    @Enumerated(EnumType.STRING)
     private String Niveau;
 }
