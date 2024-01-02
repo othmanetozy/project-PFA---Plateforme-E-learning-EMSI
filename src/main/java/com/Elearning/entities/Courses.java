@@ -13,22 +13,16 @@ import com.Elearning.enums.Filiere;
 public class Courses {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "ID")
-    private double Id;
+    private long id;
 
     @Column(name = "DURATION")
-    private int Duration;
+    private int duration;
 
-
-    @Enumerated(EnumType.STRING)
+   // @Enumerated(EnumType.STRING)
     @Column(name = "FILIERE")
-    private String Category;
+    private Filiere filiere;
 
     @Column(name = "NIVEAU")
-    private String Niveau;
-
-    @Column(name = "FILIERE")
-    @Enumerated(EnumType.STRING)
-    private Filiere Filiere;
+    private String niveau;
 }

@@ -1,6 +1,5 @@
 package com.Elearning.entities;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,17 +10,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "FICHES")
-public class Fiches {
+@Entity(name = "LOGIN")
+public class Login {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private long id;
 
-    @Column(name = "NAME")
-    private String name;
+    @Column(name = "username")
+    private String username;
 
-    @Column(name = "NIVEAU")
-    //@Enumerated(EnumType.STRING)
-    private String Niveau;
+    @Column(name = "password")
+    private String password;
 }

@@ -20,9 +20,9 @@ public class CoursesDto {
 
     private int duration;
 
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
     private Filiere category;
 
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
     private Niveau niveau;
 }
