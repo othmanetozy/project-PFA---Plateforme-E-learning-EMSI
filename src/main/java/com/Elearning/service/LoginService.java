@@ -1,10 +1,7 @@
 package com.Elearning.service;
 
+import com.Elearning.dto.LoginDto;
+
 public interface LoginService {
-
-    static String authenticateStatic(String username, String password) {
-        return null;
-    }
-
-    Boolean authenticate(String username, String password);
+     LoginDto createUser(LoginDto loginDto);
 }
