@@ -4,5 +4,5 @@ Bienvenue sur e-learning, votre destination éducative complète pour les étude
 Comment optimiser l'engagement des étudiants de différentes filières sur la plateforme e-learning, en tenant compte des spécificités de chaque domaine d'études, pour garantir une expérience d'apprentissage enrichissante et motivante ?
 <h3> Proposed Solution</h3>
 <p align="center" >
-<img src= "Resources/E-learning.png.png" height="180" width="auto" />
+<img src= "Resources/E-learning.png" height="180" width="auto" />
 </p>
