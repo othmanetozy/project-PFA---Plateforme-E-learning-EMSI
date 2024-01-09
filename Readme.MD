@@ -15,5 +15,5 @@ Avec E-learning, nous nous engageons à fournir une plateforme technologiquement
 <h3>Architecture & Road map</h3>
 <h5>Architecture</h5>
 <p align="center" >
-<img src= "Resources/Architecture.png" height="180" width="auto" />
+<img src= "Resources/Architecture.png" height="400" width="auto" />
 </p>
