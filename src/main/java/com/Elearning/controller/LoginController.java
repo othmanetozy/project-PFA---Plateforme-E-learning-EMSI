@@ -17,7 +17,7 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @PostMapping("Login")
+    @PostMapping("api")
     public ResponseEntity<?> creatUser(@RequestBody LoginDto loginDto)
     {
         System.out.println("Testttttt");
