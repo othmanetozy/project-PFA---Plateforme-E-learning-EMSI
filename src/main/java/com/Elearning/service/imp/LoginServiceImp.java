@@ -11,6 +11,8 @@ import com.Elearning.securite.JwtService;
 import com.Elearning.service.LoginService;
 import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,10 +24,13 @@ public class LoginServiceImp implements LoginService {
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
     private final UserRepository repository;
-    public LoginServiceImp(JwtService jwtService, PasswordEncoder passwordEncoder, UserRepository repository) {
+
+    private final AuthenticationManager authenticationManager;
+    public LoginServiceImp(JwtService jwtService, PasswordEncoder passwordEncoder, UserRepository repository, AuthenticationManager authenticationManager) {
         this.jwtService = jwtService;
         this.passwordEncoder = passwordEncoder;
         this.repository = repository;
+        this.authenticationManager = authenticationManager;
     }
 
 //    @Override
@@ -65,6 +70,17 @@ public class LoginServiceImp implements LoginService {
 
     @Override
     public LoginResponse authenticate(LoginRequest request) {
-        return null;
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getEmail(),
+                        request.getPassword()
+                )
+        );
+        final User user = this.repository.findByEmail(request.getEmail())
+                .orElseThrow();
+        final String jwtToken = jwtService.generateToken((UserDetails) user);
+        return LoginResponse.builder()
+                .token(jwtToken)
+                .build();
     }
 }
