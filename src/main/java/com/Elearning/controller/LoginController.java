@@ -2,7 +2,9 @@ package com.Elearning.controller;
 
 import com.Elearning.config.ResourcesPath;
 import com.Elearning.dto.LoginDto;
+import com.Elearning.dto.auth.LoginRequest;
 import com.Elearning.dto.auth.LoginResponse;
+import com.Elearning.dto.auth.RegisterRequest;
 import com.Elearning.service.LoginService;
 import com.Elearning.service.imp.LoginServiceImp;
 import lombok.RequiredArgsConstructor;
@@ -18,13 +20,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class LoginController {
 
+    public final LoginService service;
 
     @PostMapping("/register")
     public ResponseEntity<LoginResponse> register(@RequestBody RegisterRequest request){
+        return ResponseEntity.ok(service.register(request));
     }
 
     @PostMapping("/Login")
     public ResponseEntity<LoginResponse> register(@RequestBody LoginRequest request){
+        return ResponseEntity.ok(service.authenticate(request));
     }
 
 
