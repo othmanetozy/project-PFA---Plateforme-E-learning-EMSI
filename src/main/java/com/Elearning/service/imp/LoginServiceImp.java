@@ -6,6 +6,7 @@ import com.Elearning.dto.auth.LoginRequest;
 import com.Elearning.dto.auth.LoginResponse;
 import com.Elearning.dto.auth.RegisterRequest;
 import com.Elearning.entities.User;
+import com.Elearning.enums.Role;
 import com.Elearning.repo.UserRepository;
 import com.Elearning.securite.JwtService;
 import com.Elearning.service.LoginService;
@@ -32,36 +33,19 @@ public class LoginServiceImp implements LoginService {
         this.authenticationManager = authenticationManager;
     }
 
-//    @Override
-//    public LoginDto createUser(LoginDto loginDto) {
-//      User user = new User();
-//      user.setEmail(loginDto.getUsername());
-//      user.setUsername(loginDto.getPassword());
-//      user.setPassword(new BCryptPasswordEncoder().encode(loginDto.getPassword()));
-//      User createUser = userRep.save(user);
-//      UserDto userDto = new UserDto();
-//      userDto.setEmail(createUser.getEmail());
-//      userDto.setUsername(createUser.getUsername());
-//      userDto.setPassword(createUser.getPassword());
-//      return loginDto;
-//    }
-
-//    @Override
-//    public LoginDto createUser(LoginDto loginDto) {
-//        return null;
-//    }
-
     @Override
-    public LoginResponse register(RegisterRequest request) {
-        User user= User
+    public LoginResponse register(RegisterRequest registerRequest) {
+        var user= User
                 .builder()
-                .username(request.getFirstname())
-                .lastname(request.getLastname())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
+                .firstname(registerRequest.firstname())
+                .lastname(registerRequest.lastname())
+                .email(registerRequest.email())
+                .password(passwordEncoder.encode(registerRequest.password()))
+                .role(Role.Client)
                 .build();
         this.repository.save(user);
-        final String jwtToken=this.jwtService.generateToken((UserDetails) user);
+        var jwtToken=this.jwtService.generateToken(user);
+        System.out.println("test 3");
         return LoginResponse.builder()
                 .token(jwtToken)
                 .build();
@@ -71,13 +55,13 @@ public class LoginServiceImp implements LoginService {
     public LoginResponse authenticate(LoginRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword()
+                        request.email(),
+                        request.password()
                 )
         );
-        final User user = this.repository.findByEmail(request.getEmail())
+        final User user = this.repository.findByEmail(request.email())
                 .orElseThrow();
-        final String jwtToken = jwtService.generateToken((UserDetails) user);
+        final String jwtToken = jwtService.generateToken(user);
         return LoginResponse.builder()
                 .token(jwtToken)
                 .build();

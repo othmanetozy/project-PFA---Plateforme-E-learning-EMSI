@@ -1,15 +1,10 @@
 package com.Elearning.dto.auth;
 
-import lombok.*;
+public record RegisterRequest (
+     String firstname,
+     String lastname,
+     String email,
+     String password
+){
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class RegisterRequest {
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String password;
 }

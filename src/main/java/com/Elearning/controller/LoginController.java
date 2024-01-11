@@ -18,12 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
+
 public class LoginController {
 
     public final LoginService service;
 
     @PostMapping("/register")
     public ResponseEntity<LoginResponse> register(@RequestBody RegisterRequest request){
+        System.out.println("test 1");
         return ResponseEntity.ok(service.register(request));
     }
 
