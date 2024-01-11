@@ -3,19 +3,17 @@ package com.Elearning.service.imp;
 import com.Elearning.dto.LoginDto;
 import com.Elearning.dto.UserDto;
 import com.Elearning.entities.User;
-import com.Elearning.repo.UserRepo;
+import com.Elearning.repo.UserRepository;
 import com.Elearning.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class LoginServiceImp implements LoginService {
 
     @Autowired
-    private UserRepo userRep;
+    private UserRepository userRep;
 
     @Override
     public LoginDto createUser(LoginDto loginDto) {
