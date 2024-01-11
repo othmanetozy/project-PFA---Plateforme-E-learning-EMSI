@@ -9,7 +9,6 @@ import com.Elearning.entities.User;
 import com.Elearning.repo.UserRepository;
 import com.Elearning.securite.JwtService;
 import com.Elearning.service.LoginService;
-import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -47,10 +46,10 @@ public class LoginServiceImp implements LoginService {
 //      return loginDto;
 //    }
 
-    @Override
-    public LoginDto createUser(LoginDto loginDto) {
-        return null;
-    }
+//    @Override
+//    public LoginDto createUser(LoginDto loginDto) {
+//        return null;
+//    }
 
     @Override
     public LoginResponse register(RegisterRequest request) {

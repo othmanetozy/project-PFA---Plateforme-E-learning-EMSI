@@ -6,7 +6,7 @@ import com.Elearning.dto.auth.LoginResponse;
 import com.Elearning.dto.auth.RegisterRequest;
 
 public interface LoginService {
-     LoginDto createUser(LoginDto loginDto);
+     //LoginDto createUser(LoginDto loginDto);
 
      LoginResponse register(RegisterRequest request);
 
