@@ -25,6 +25,8 @@ Avec E-learning, nous nous engageons à fournir une plateforme technologiquement
 </p>
 
 ## Contributers
-[Othmane tozy](https://github.com/othmanetozy)
+ [Othmane tozy](https://github.com/othmanetozy)
+ 
 [Zidane Moulay](https://github.com/ZidaneMoulay)
+
 [Jalal Himed](https://github.com/jalalhm)
