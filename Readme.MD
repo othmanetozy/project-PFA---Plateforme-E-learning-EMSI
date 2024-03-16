@@ -30,3 +30,5 @@ Avec E-learning, nous nous engageons à fournir une plateforme technologiquement
 [Zidane Moulay](https://github.com/ZidaneMoulay)
 
 [Jalal Himed](https://github.com/jalalhm)
+
+[El Ouali Med](https://github.com/Medelouali)
