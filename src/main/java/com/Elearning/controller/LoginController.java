@@ -1,6 +1,7 @@
 package com.Elearning.controller;
 
 import com.Elearning.config.ResourcesPath;
+import com.Elearning.dto.CustomEntityResponse;
 import com.Elearning.dto.LoginDto;
 import com.Elearning.dto.auth.LoginRequest;
 import com.Elearning.dto.auth.LoginResponse;
@@ -18,32 +19,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-
+@RequestMapping(ResourcesPath.API_AUTH)
 public class LoginController {
-
     public final LoginService service;
 
-    @PostMapping("/register")
-    public ResponseEntity<LoginResponse> register(@RequestBody RegisterRequest request){
-        System.out.println("test 1");
-        return ResponseEntity.ok(service.register(request));
+    @PostMapping(ResourcesPath.REGISTER)
+    public CustomEntityResponse<LoginResponse> register(@RequestBody RegisterRequest request){
+        return new CustomEntityResponse<>(service.register(request));
     }
 
-    @PostMapping("/Login")
-    public ResponseEntity<LoginResponse> register(@RequestBody LoginRequest request){
-        return ResponseEntity.ok(service.authenticate(request));
+    @PostMapping(ResourcesPath.LOGIN)
+    public CustomEntityResponse<LoginResponse> register(@RequestBody LoginRequest request){
+        return new CustomEntityResponse<>(service.authenticate(request));
     }
-
-
-
-
-   /* @PostMapping("api")
-    public ResponseEntity<?> creatUser(@RequestBody LoginDto loginDto)
-    {
-        System.out.println("Testttttt");
-        LoginDto creatUser = loginService.createUser(loginDto);
-        if (creatUser == null){
-        return new ResponseEntity<>("Utilisateur non enregistrer",HttpStatus.BAD_REQUEST);}
-        return new ResponseEntity<>(creatUser,HttpStatus.CREATED);
-    }*/
 }
