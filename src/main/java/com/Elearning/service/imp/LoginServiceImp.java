@@ -7,6 +7,7 @@ import com.Elearning.dto.auth.LoginResponse;
 import com.Elearning.dto.auth.RegisterRequest;
 import com.Elearning.entities.User;
 import com.Elearning.enums.Role;
+import com.Elearning.exceptions.UserAlreadyFoundException;
 import com.Elearning.repo.UserRepository;
 import com.Elearning.securite.JwtService;
 import com.Elearning.service.LoginService;
@@ -17,6 +18,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class LoginServiceImp implements LoginService {
@@ -35,6 +38,8 @@ public class LoginServiceImp implements LoginService {
 
     @Override
     public LoginResponse register(RegisterRequest registerRequest) {
+        Optional<User> oldUser = this.repository.findByEmail(registerRequest.email());
+        if(oldUser.isPresent()) throw new UserAlreadyFoundException("This email is already taken, please try another one");
         var user= User
                 .builder()
                 .firstname(registerRequest.firstname())
@@ -45,7 +50,6 @@ public class LoginServiceImp implements LoginService {
                 .build();
         this.repository.save(user);
         var jwtToken=this.jwtService.generateToken(user);
-        System.out.println("test 3");
         return LoginResponse.builder()
                 .token(jwtToken)
                 .build();
@@ -59,9 +63,9 @@ public class LoginServiceImp implements LoginService {
                         request.password()
                 )
         );
-        final User user = this.repository.findByEmail(request.email())
-                .orElseThrow();
-        final String jwtToken = jwtService.generateToken(user);
+        Optional<User> user = this.repository.findByEmail(request.email());
+        if(user.isEmpty()) throw new UserAlreadyFoundException("This email is wrong, please try another one");
+        final String jwtToken = jwtService.generateToken(user.get());
         return LoginResponse.builder()
                 .token(jwtToken)
                 .build();
